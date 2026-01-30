@@ -2,7 +2,7 @@ import { mergeTests, test as base, expect } from "@playwright/test";
 import { test as logindev } from "./login/login-fixture";
 import { test as b2b2018sendinglist } from "./external-b2b-2018/b2b-2018-sending-list-fixture";
 import { test as randomData } from "./random-data-fixture";
-import { test as envEnv } from "./envEnvironment-variables-fixture";
+import { test as envEnv } from "./envEnvironment-variables-fixture"
 
 export class APICommonFixture {
     logResponse(name: string, response: any) {
@@ -34,8 +34,7 @@ export const test = mergeTests(
     logindev,
     b2b2018sendinglist,
     randomData,
-    envEnv,
-
+    envEnv
 );
 
 export { expect };

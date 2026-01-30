@@ -1,7 +1,6 @@
-import { test, expect, APICommonFixture } from "../../src/fixture/moi-truong-dev-fixture/api/common-fixture";
+import { test, expect } from "../../src/fixture/moi-truong-dev-fixture/api/common-fixture";
 
 let access_token: string = '';
-
 const brandname: string = 'IRIS';
 const IsCheckDuplicate: string = "1";
 const PhoneNumber: string = "84374619213";
@@ -102,11 +101,9 @@ test.describe('B2B 2018 - SendingList - UNHAPPY CASE', { tag: ['@b2b2018', '@unh
         console.log(`Logged in successfully, token: ${access_token.substring(0, 20)}...`);
     });
 
-    // const username = envEnvironmentVariables.get("USERNAME");
-    // const password = envEnvironmentVariables.get("PASSWORD");
-
     test(`Testcase 02: B2B 2023 - SendingList - Brandname is invalid(Đối tác chưa đăng ký brandname qua telco này)`, async ({ sendB2B2018SendingListAPI, generateRandomData, envEnvironmentVariables, apiHelper }) => {
-
+        const username = envEnvironmentVariables.get("USERNAME");
+        const password = envEnvironmentVariables.get("PASSWORD");
         const SendingList = [];
         const brandnameinvalid = "mama";
         const telcoIsInvalid = "aaaaaaa"
@@ -145,6 +142,7 @@ test.describe('B2B 2018 - SendingList - UNHAPPY CASE', { tag: ['@b2b2018', '@unh
 
         const body = await responses.json();
         console.log("📩 Response:", JSON.stringify(body, null, 2));
+        apiHelper.logResponse('B2B2018_SendingList', body);
 
         const { Code, Message, Data } = body;
 
@@ -160,6 +158,8 @@ test.describe('B2B 2018 - SendingList - UNHAPPY CASE', { tag: ['@b2b2018', '@unh
 
     test(`Testcase 03: B2B 2023 - SendingList - Brandname is missing(Bỏ trống brandname)`, async ({ sendB2B2018SendingListAPI, generateRandomData, envEnvironmentVariables, apiHelper }) => {
         // const sendB2B2018MultiSendingList = new SendB2B2018SendingListAPI(request, access_token);
+        const username = envEnvironmentVariables.get("USERNAME");
+        const password = envEnvironmentVariables.get("PASSWORD");
 
         const SendingList = [];
         const brandnameinvalid = "mama";
@@ -194,6 +194,7 @@ test.describe('B2B 2018 - SendingList - UNHAPPY CASE', { tag: ['@b2b2018', '@unh
 
         const body = await responses.json();
         console.log("📩 Response:", JSON.stringify(body, null, 2));
+        apiHelper.logResponse('B2B2018_SendingList', body);
 
         const { Code, Message, Data } = body;
 
@@ -210,6 +211,8 @@ test.describe('B2B 2018 - SendingList - UNHAPPY CASE', { tag: ['@b2b2018', '@unh
     test(`Testcase 04: B2B 2023 - SendingList - SmsId is invalid(SmsId rỗng hoặc bị bỏ trống)`, async ({ sendB2B2018SendingListAPI, generateRandomData, envEnvironmentVariables, apiHelper }) => {
 
         // const sendB2B2018MultiSendingList = new SendB2B2018SendingListAPI(request, access_token);
+        const username = envEnvironmentVariables.get("USERNAME");
+        const password = envEnvironmentVariables.get("PASSWORD");
 
         const SendingList = [];
 
@@ -241,6 +244,7 @@ test.describe('B2B 2018 - SendingList - UNHAPPY CASE', { tag: ['@b2b2018', '@unh
 
         const body = await responses.json();
         console.log("📩 Response:", JSON.stringify(body, null, 2));
+        apiHelper.logResponse('B2B2018_SendingList', body);
 
         const { Code, Message, Data } = body;
 
@@ -255,7 +259,8 @@ test.describe('B2B 2018 - SendingList - UNHAPPY CASE', { tag: ['@b2b2018', '@unh
     });
 
     test(`Testcase 05: B2B 2023 - SendingList - PhoneNumber is missing(Số điện thoại rỗng hoặc bị bỏ trống)`, async ({ sendB2B2018SendingListAPI, generateRandomData, envEnvironmentVariables, apiHelper }) => {
-
+        const username = envEnvironmentVariables.get("USERNAME");
+        const password = envEnvironmentVariables.get("PASSWORD");
         // const sendB2B2018MultiSendingList = new SendB2B2018SendingListAPI(request, access_token);
 
         const SendingList = [];
@@ -289,6 +294,7 @@ test.describe('B2B 2018 - SendingList - UNHAPPY CASE', { tag: ['@b2b2018', '@unh
 
         const body = await responses.json();
         console.log("📩 Response:", JSON.stringify(body, null, 2));
+        apiHelper.logResponse('B2B2018_SendingList', body);
 
         const { Code, Message, Data } = body;
 
@@ -303,7 +309,8 @@ test.describe('B2B 2018 - SendingList - UNHAPPY CASE', { tag: ['@b2b2018', '@unh
     });
 
     test(`Testcase 06: B2B 2023 - SendingList - PhoneNumber is invalid(Số điện thoại không đúng định dạng)`, async ({ sendB2B2018SendingListAPI, generateRandomData, envEnvironmentVariables, apiHelper }) => {
-
+        const username = envEnvironmentVariables.get("USERNAME");
+        const password = envEnvironmentVariables.get("PASSWORD");
         // const sendB2B2018MultiSendingList = new SendB2B2018SendingListAPI(request, access_token);
         const SendingList = [];
         const phoneNumberisinvalid = "+27451200000";
@@ -337,6 +344,7 @@ test.describe('B2B 2018 - SendingList - UNHAPPY CASE', { tag: ['@b2b2018', '@unh
 
         const body = await responses.json();
         console.log("📩 Response:", JSON.stringify(body, null, 2));
+        apiHelper.logResponse('B2B2018_SendingList', body);
 
         const { Code, Message, Data } = body;
 
@@ -353,7 +361,8 @@ test.describe('B2B 2018 - SendingList - UNHAPPY CASE', { tag: ['@b2b2018', '@unh
     test(`Testcase 07: B2B 2023 - SendingList - Content is missing & Content is invalid (Nội dung rỗng hoặc bị bỏ trống / Nội dung vượt quá độ dài quy định)`, async ({ sendB2B2018SendingListAPI, generateRandomData, envEnvironmentVariables, apiHelper }) => {
 
         // const sendB2B2018MultiSendingList = new SendB2B2018SendingListAPI(request, access_token);
-
+        const username = envEnvironmentVariables.get("USERNAME");
+        const password = envEnvironmentVariables.get("PASSWORD");
         let longContent = generateRandomData().content + "A".repeat(10001);
         const { smsId: smsId1, content: content1 } = generateRandomData();
         const { smsId: smsId2, content: content2 } = generateRandomData();
@@ -394,6 +403,7 @@ test.describe('B2B 2018 - SendingList - UNHAPPY CASE', { tag: ['@b2b2018', '@unh
 
         const body = await responses.json();
         console.log("📩 Response:", JSON.stringify(body, null, 2));
+        apiHelper.logResponse('B2B2018_SendingList', body);
 
         const { Code, Message, Data } = body;
 
@@ -409,7 +419,8 @@ test.describe('B2B 2018 - SendingList - UNHAPPY CASE', { tag: ['@b2b2018', '@unh
     });
 
     test(`Testcase 08: B2B 2023 - SendingList - Content is duplicate & Sms is duplicate (Tin trùng lặp)`, async ({ sendB2B2018SendingListAPI, generateRandomData, envEnvironmentVariables, apiHelper }) => {
-
+        const username = envEnvironmentVariables.get("USERNAME");
+        const password = envEnvironmentVariables.get("PASSWORD");
         // const sendB2B2018MultiSendingList = new SendB2B2018SendingListAPI(request, access_token);
 
         const { smsId: smsId1, content: content1 } = generateRandomData();
@@ -452,6 +463,7 @@ test.describe('B2B 2018 - SendingList - UNHAPPY CASE', { tag: ['@b2b2018', '@unh
 
         const body = await responses.json();
         console.log("📩 Response:", JSON.stringify(body, null, 2));
+        apiHelper.logResponse('B2B2018_SendingList', body);
 
         const { Code, Message, Data } = body;
 
@@ -467,7 +479,8 @@ test.describe('B2B 2018 - SendingList - UNHAPPY CASE', { tag: ['@b2b2018', '@unh
     });
 
     test(`Testcase 09: B2B 2023 - SendingList - Messeage is rejected (Nội dung chứa từ khóa bị chặn)`, async ({ sendB2B2018SendingListAPI, generateRandomData, envEnvironmentVariables, apiHelper }) => {
-
+        const username = envEnvironmentVariables.get("USERNAME");
+        const password = envEnvironmentVariables.get("PASSWORD");
         // const sendB2B2018MultiSendingList = new SendB2B2018SendingListAPI(request, access_token);
         const SendingList = [];
         //Nội dung có chứa từ khóa bị chặn 
@@ -504,6 +517,7 @@ test.describe('B2B 2018 - SendingList - UNHAPPY CASE', { tag: ['@b2b2018', '@unh
 
         const body = await responses.json();
         console.log("📩 Response:", JSON.stringify(body, null, 2));
+        apiHelper.logResponse('B2B2018_SendingList', body);
 
         const { Code, Message, Data } = body;
 

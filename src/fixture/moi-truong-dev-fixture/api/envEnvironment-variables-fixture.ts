@@ -36,8 +36,6 @@ export class EnvEnvironmentVariables {
         return value;
     }
 
-
-
     // Lấy BASE URL theo loại API (OCB, MB, B2B_2018, ...)
     getBaseURL(apiType: string): string {
         const key = `BASE_URL_${apiType.toUpperCase()}`;

@@ -4,12 +4,14 @@ import { test as b2b2018sendinglist } from "./external-b2b-2018/b2b-2018-sending
 import { test as randomData } from "./random-data-fixture";
 import { test as envEnv } from "./envEnvironment-variables-fixture"
 import { test as b2b2023sendinglist } from "./external-b2b-2023/b2b-2023-sending-list-fixture";
-import { test as b2b2018send} from "./external-b2b-2023/b2b-2023-send-fixture";
+import { test as b2b2018send } from "./external-b2b-2023/b2b-2023-send-fixture";
 import { test as b2bmedlatecsendinglist } from "./external-medlatec/medlatec-sending-list-fixture";
-import { test as ocbhosend} from "./external-ocb/ocb-ho-send-fixture";
-import { test as ocbhosendinglist} from "./external-ocb/ocb-ho-sendinglist-fixture";
-import { test as mbbanksendinglist} from "./external-mbbank/mb-sending-list-fixture";
-
+import { test as ocbhosend } from "./external-ocb/ocb-ho-send-fixture";
+import { test as ocbhosendinglist } from "./external-ocb/ocb-ho-sendinglist-fixture";
+import { test as mbbanksendinglist } from "./external-mbbank/mb-sending-list-fixture";
+import { test as namabank } from "./external-nam-a-bank/sending-list-nam-a-bank-fixture";
+import { test as stb } from "./external-stb/send-stb-dev-pom-sms-api";
+import { test as vnpt } from "./external-vnpt/vnpt-send-fixture";
 
 export class APICommonFixture {
     logResponse(name: string, response: any) {
@@ -48,7 +50,10 @@ export const test = mergeTests(
     ocbhosend,
     ocbhosendinglist,
     mbbanksendinglist,
-    
+    namabank,
+    stb,
+    vnpt,
+
 );
 
 export { expect };

@@ -1,4 +1,4 @@
-import { test as base, request} from '@playwright/test';
+import { test as base, expect } from '../login/login-fixture';
 import { SendOCBHOSendAPI } from '../../../../pom/moi-truong-dev/api/external-ocb/send-ocb-ho-dev-pom-sms-api';
 
 export const test = base.extend<{ sendOCBHOSendAPI: SendOCBHOSendAPI; }>({

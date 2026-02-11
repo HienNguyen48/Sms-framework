@@ -1,4 +1,4 @@
-import { test, expect } from "../../src/fixture/moi-truong-dev-fixture/api/common-fixture";
+import { test, expect } from "../../../src/fixture/moi-truong-dev-fixture/api/common-fixture";
 
 let access_token: string = '';
 const brandname: string = 'IRIS';

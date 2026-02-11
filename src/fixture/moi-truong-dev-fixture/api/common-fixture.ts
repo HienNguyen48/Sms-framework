@@ -5,6 +5,11 @@ import { test as randomData } from "./random-data-fixture";
 import { test as envEnv } from "./envEnvironment-variables-fixture"
 import { test as b2b2023sendinglist } from "./external-b2b-2023/b2b-2023-sending-list-fixture";
 import { test as b2b2018send} from "./external-b2b-2023/b2b-2023-send-fixture";
+import { test as b2bmedlatecsendinglist } from "./external-medlatec/medlatec-sending-list-fixture";
+import { test as ocbhosend} from "./external-ocb/ocb-ho-send-fixture";
+import { test as ocbhosendinglist} from "./external-ocb/ocb-ho-sendinglist-fixture";
+import { test as mbbanksendinglist} from "./external-mbbank/mb-sending-list-fixture";
+
 
 export class APICommonFixture {
     logResponse(name: string, response: any) {
@@ -38,7 +43,12 @@ export const test = mergeTests(
     randomData,
     envEnv,
     b2b2023sendinglist,
-    b2b2018send
+    b2b2018send,
+    b2bmedlatecsendinglist,
+    ocbhosend,
+    ocbhosendinglist,
+    mbbanksendinglist,
+    
 );
 
 export { expect };

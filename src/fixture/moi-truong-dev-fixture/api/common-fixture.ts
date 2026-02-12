@@ -12,6 +12,8 @@ import { test as mbbanksendinglist } from "./external-mbbank/mb-sending-list-fix
 import { test as namabank } from "./external-nam-a-bank/sending-list-nam-a-bank-fixture";
 import { test as stb } from "./external-stb/send-stb-dev-pom-sms-api";
 import { test as vnpt } from "./external-vnpt/vnpt-send-fixture";
+import { test as vpb } from "./external-vpb/vpb-send-fixture";
+import { test as xanhpon } from "./external-xanh-pon/xanh-pon-sendinglist-fixture";
 
 export class APICommonFixture {
     logResponse(name: string, response: any) {
@@ -53,6 +55,8 @@ export const test = mergeTests(
     namabank,
     stb,
     vnpt,
+    vpb,
+    xanhpon
 
 );
 

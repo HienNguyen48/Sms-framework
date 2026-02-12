@@ -1,10 +1,10 @@
-import { test as base, expect } from '';
-import {test as } from '';
+import { test as base, expect } from '../../../../../src/fixture/moi-truong-dev-fixture/ui/login/login-fixture';
+import { BrandnamePage } from 'src/pom/moi-truong-dev/page/cms2018/brandname/brandname.page';
 
-export const test = base.extend<{ vnptSendingAPI: VNPTSendingAPI }>({
+export const test = base.extend<{ vnptSendingAPI: BrandnamePage }>({
     vnptSendingAPI: async ({ request, accessToken }, use) => {
-        const vnptSendingAPI = new VNPTSendingAPI(request, accessToken);
-        await use(vnptSendingAPI);
+        const brandnamePage = new BrandnamePage(request, accessToken);
+        await use(brandnamePage);
     },
 });
 
